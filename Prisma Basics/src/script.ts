@@ -4,12 +4,12 @@ async function main() {
     // Create a new user with a post
     const user = await prisma.user.create({
         data: {
-            name: "Alice",
-            email: "alice@prisma.io",
+            name: "Alice2",
+            email: "alice2@prisma.io",
             posts: {
                 create: {
-                    title: "Hello World",
-                    content: "This is my first post!",
+                    title: "Hello World 2",
+                    content: "This is my first post 2!",
                     published: true,
                 },
             },
@@ -20,16 +20,16 @@ async function main() {
     });
     console.log("Created user:", user);
 
-    const newPost = await prisma.post.create({
-        data: {
-            authorId: 1,
-            title: "Hello World",
-            content: "This is my second post by first user!",
-            published: true,
-        }
-    });
+    // const newPost = await prisma.post.create({
+    //     data: {
+    //         authorId: 1,
+    //         title: "Hello World",
+    //         content: "This is my second post by first user!",
+    //         published: true,
+    //     }
+    // });
 
-    console.log("Created post: ", newPost);
+    // console.log("Created post: ", newPost);
 
     // Fetch all users with their posts
     const allUsers = await prisma.user.findMany({
